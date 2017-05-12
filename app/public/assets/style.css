@@ -15,9 +15,16 @@ body {
 blockquote {
 	border-left: 3px solid #FFAB00;
 	font-size: 20px;
-
 }
 
+label {
+	margin-top: -35px;
+}
+
+.btn {
+	margin-bottom: 50px;
+}
 .btn img {
 	margin: 3px;
 }
+
