@@ -1,0 +1,23 @@
+body {
+	margin: 0 auto;
+	background-color: #2F2F2F;
+	font-family: "Muli", sans-serif;
+}
+
+#headerCard {
+	margin-top: 50px;
+}
+
+.btn-large {
+	margin: 25px 0;
+}
+
+blockquote {
+	border-left: 3px solid #FFAB00;
+	font-size: 20px;
+
+}
+
+.btn img {
+	margin: 3px;
+}
