@@ -1,7 +1,7 @@
 body {
 	margin: 0 auto;
-	background-color: #2F2F2F;
-	font-family: "Muli", sans-serif;
+	background-image: url("background.jpg");
+	font-family: "Muli", sans-serif;	
 }
 
 #headerCard {

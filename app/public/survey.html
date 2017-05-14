@@ -18,6 +18,7 @@
 </head>
 <body>
 	<div class="container">
+		<!--header panel-->
 		<div class="row">
 			<div class="col s12">
 				<div id="headerCard" class="card-panel blue lighten-3">
@@ -26,7 +27,27 @@
 				</div>
 			</div>
 		</div> 
-			<div class="row">
+		<!--info panel-->
+		<div class="row">
+			<div class="col s12">
+				<div id="info" class="card-panel blue lighten-3">
+					<div class="row">
+						<div class="input-field white col s12">
+	          				<input id="name" type="text" class="validate">
+	          				<label class="indigo-text" for="name">Name (required)</label>
+	        			</div>
+					</div>
+					<div class="row">
+						<div class="input-field white col s12">
+	          				<input id="photo" type="text" class="validate">
+	          				<label class="indigo-text" for="photo">Link to Photo (required)</label>
+	        			</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+		<!--survey panel-->
+		<div class="row">
 			<div class="col s12">
 				<div id="survey" class="card-panel blue lighten-3">
 				<!--question1-->
@@ -169,11 +190,14 @@
 					    <label class="indigo-text">10. How do you feel about switch statements?</label>
 					</div>
 					</div>
+					<button id="submit" class="waves-effect waves-light amber accent-4 black-text btn-large" type="submit" name="submit">Submit
+   					 	<i class="material-icons right">send</i>
+  					</button>
 				</div>
 			</div>
 		</div> 
-		<a class="waves-effect waves-light amber accent-4 btn"><i class="material-icons left">group</i>API Friends List</a>
-		<a class="waves-effect waves-light amber accent-4 btn"><img src="assets/github-circle.png" alt="github-circle" ></a>
+		<a class="waves-effect waves-light amber accent-4 black-text btn"><i class="material-icons left">group</i>API Friends List</a>
+		<a class="waves-effect waves-light amber accent-4 black-text btn"><img src="assets/github-circle.png" alt="github-circle" ></a>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
