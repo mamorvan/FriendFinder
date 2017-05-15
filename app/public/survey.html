@@ -260,6 +260,11 @@ label {
 			};
 
 			console.log(newFriend);
+
+			$.post("/api/friends", newFriend, function(data){
+				console.log("Your responses have been added");
+			});
+
 		})
 	</script>
 
