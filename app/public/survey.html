@@ -59,7 +59,7 @@ label {
 		<div class="row">
 			<div class="col s12">
 				<div id="headerCard" class="card-panel blue lighten-3">
-					<a href="/"><h1 class="indigo-text">CodeFriend Finder<blockquote class="white-text"><em>You are the CSS to my HTML, the jQuery to my JavaScript,  and the Express to my Node.</em></blockquote></h1></a>
+					<a href="/"><h1 class="indigo-text">CodeFriend Finder<blockquote class="white-text"><em>You are the CSS to my HTML and the jQuery to my JavaScript.</em></blockquote></h1></a>
 					
 				</div>
 			</div>
@@ -89,9 +89,9 @@ label {
 				<div id="survey" class="card-panel blue lighten-3">
 				<!--question1-->
 					<div class="row">
-					<div class="input-field col s12">
+					<div  class="input-field col s12">
 						<label class="indigo-text">1. How do semicolons make you feel?</label>
-    					<select class="browser-default">
+    					<select id="question1" class="browser-default">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option value="1">1 (neutral)</option>
 					      <option value="2">2</option>
@@ -104,7 +104,7 @@ label {
 				<!--question2-->
 					<div class="row">
 					<div class="input-field col s12">
-    					<select class="browser-default">
+    					<select id="question2" class="browser-default">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option value="1">1 (My variable are called var1, var2, etc.)</option>
 					      <option value="2">2</option>
@@ -118,7 +118,7 @@ label {
 				<!--question3-->
 					<div class="row">
 					<div class="input-field col s12">
-    					<select class="browser-default">
+    					<select id="question3" class="browser-default">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option value="1">1 (No, I comment it out in case I might need it later.)</option>
 					      <option value="2">2</option>
@@ -132,7 +132,7 @@ label {
 				<!--question4-->
 					<div class="row">
 					<div class="input-field col s12">
-    					<select class="browser-default">
+    					<select id="question4" class="browser-default">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option value="1">1 (It's fine. Who cares?)</option>
 					      <option value="2">2</option>
@@ -145,8 +145,8 @@ label {
 					</div>
 				<!--question5-->
 					<div class="row">
-					<div class="input-field col s12">
-    					<select class="browser-default">
+					<div  class="input-field col s12">
+    					<select id="question5" class="browser-default">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option value="1">1 (as long as it works, right?)</option>
 					      <option value="2">2</option>
@@ -160,7 +160,7 @@ label {
 				<!--question6-->
 					<div class="row">
 					<div class="input-field col s12">
-    					<select class="browser-default">
+    					<select id="question6" class="browser-default">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option value="1">1 (I'm afraid of commitment so only when I have to)</option>
 					      <option value="2">2</option>
@@ -174,7 +174,7 @@ label {
 				<!--question7-->
 					<div class="row">
 					<div class="input-field col s12">
-    					<select class="browser-default">
+    					<select id="question7" class="browser-default">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option value="1">1 (I copy and paste as much as possible - 90% of my code is copied.)</option>
 					      <option value="2">2</option>
@@ -188,7 +188,7 @@ label {
 				<!--question8-->
 					<div class="row">
 					<div class="input-field col s12">
-    					<select class="browser-default">
+    					<select id="question8" class="browser-default">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option value="1">1 (It's a real time saver!)</option>
 					      <option value="2">2</option>
@@ -202,7 +202,7 @@ label {
 				<!--question9-->
 					<div class="row">
 					<div class="input-field col s12">
-    					<select class="browser-default">
+    					<select id="question9" class="browser-default">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option value="1">1 (I just put everything in as I'm coding it.)</option>
 					      <option value="2">2</option>
@@ -216,7 +216,7 @@ label {
 				<!--question10-->
 					<div class="row">
 					<div class="input-field col s12">
-    					<select class="browser-default">
+    					<select id="question10" class="browser-default">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option value="1">1 (What's the point? I can just have limitless else if statements.)</option>
 					      <option value="2">2</option>
@@ -238,6 +238,30 @@ label {
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$("#submit").on("click", function(event){
+			event.preventDefault();
+
+			var newFriend = {
+				name: $("#name").val().trim(),
+				photo: $("#photo").val().trim(),
+				scores: [
+					$("#question1").val(), 
+					$("#question2").val(), 
+					$("#question3").val(), 
+					$("#question4").val(), 
+					$("#question5").val(), 
+					$("#question6").val(), 
+					$("#question7").val(), 
+					$("#question8").val(), 
+					$("#question9").val(), 
+					$("#question10").val()
+				]
+			};
+
+			console.log(newFriend);
+		})
+	</script>
 
 </body>
 </html>
