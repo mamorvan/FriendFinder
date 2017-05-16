@@ -6,10 +6,17 @@
 
 	<!--Favicon-->
 	<link rel="shortcut icon" href="https://cloud.githubusercontent.com/assets/21952950/26069949/cfb5b38e-3970-11e7-9642-e9ca348a3626.jpg">
+	<!--jQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 	<!--Materialize-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-	<!--Materialize icons-->
+	<!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <!--to use icons--> 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 	<!--Google fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
@@ -36,7 +43,7 @@ blockquote {
 	font-size: 20px;
 }
 
-label {
+#survey label {
 	margin-top: -35px;
 }
 
@@ -70,13 +77,13 @@ label {
 				<div id="info" class="card-panel blue lighten-3">
 					<div class="row">
 						<div class="input-field white col s12">
-	          				<input id="name" type="text" class="validate">
+	          				<input id="name" type="text">
 	          				<label class="indigo-text" for="name">Name (required)</label>
 	        			</div>
 					</div>
 					<div class="row">
 						<div class="input-field white col s12">
-	          				<input id="photo" type="text" class="validate">
+	          				<input id="photo" type="text">
 	          				<label class="indigo-text" for="photo">Link to Photo (required)</label>
 	        			</div>
 					</div>
@@ -230,15 +237,32 @@ label {
 					<button id="submit" class="waves-effect waves-light amber accent-4 black-text btn-large" type="submit" name="submit">Submit
    					 	<i class="material-icons right">send</i>
   					</button>
+
+  					<div id="modalResult" class="modal">
+  						<div class="modal-content">
+  							<h4>Your CodeFriend Match is:</h4>
+  							<h6 id="matchName">match name will be here</h6>
+  							<img id="matchPhoto" src="" alt="">
+  						</div>
+  						<div class="modal-footer">
+  							<a href="#" class="modal-action modal-close waves-effect btn-flat">Close</a>
+  						</div>
+  					</div>
 				</div>
+
 			</div>
 		</div> 
 		<a href="/api/friends" class="waves-effect waves-light amber accent-4 black-text btn"><i class="material-icons left">group</i>API Friends List</a>
 		<a href="https://github.com/mamorvan/FriendFinder" class="waves-effect waves-light amber accent-4 black-text btn"><img src="https://cloud.githubusercontent.com/assets/21952950/26069920/ae8df86a-3970-11e7-829f-a2ef2c402711.png" alt="github-circle" ></a>
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
 	<script type="text/javascript">
+		//initialize modal
+		$(document).ready(function(){
+			$(".modal").modal();
+		});
+		
 		$("#submit").on("click", function(event){
 			event.preventDefault();
 
@@ -259,14 +283,14 @@ label {
 				]
 			};
 
-			console.log(newFriend);
-
 			$.post("/api/friends", newFriend, function(data){
-				//modal will go here;
-				alert(JSON.stringify(data));
+				$("#matchName").html(data.name);
+				$("#matchPhoto").attr("src", data.photo);
+				$("#modalResult").modal("open");
 			});
 
 		})
+
 	</script>
 
 </body>
