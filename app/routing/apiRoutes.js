@@ -6,7 +6,22 @@ module.exports = function(app) {
 	});
 
 	app.post("/api/friends", function(req, res){
+		var newResults = (req.body['scores']).map(Number);
+		var totalDifference = 100;
+		var friendIndex;
+		for (var i = 0; i < friends.length; i++){
+			var friendResults = friends[i]['scores'];
+			
+			var tempDifference = 0;
+			for (var j =0; j < newResults.length; j++){
+				tempDifference += Math.abs(newResults[j]-friendResults[j]);	
+			}
+			if (tempDifference < totalDifference) {
+				totalDifference = tempDifference;
+				friendIndex = i;
+			}
+		}
+		res.json(friends[friendIndex]);
 		friends.push(req.body);
-
 	});
 };
