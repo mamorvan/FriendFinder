@@ -26,9 +26,10 @@ $("#submit").on("click", function(event){
 		alert("Please enter your name.  We need to know who you are to find you a match.");
 		return;
 	}
-	if (newFriend.photo === ""){
-		alert("Please give us a photo link.  We really need to know what you look like to find you a good coding buddy!");
-		return;
+	//make sure friend photo is a link
+	if (!(/^(http:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(newFriend.photo))){
+    	alert("invalid url\nPlease give us a photo link. \nWe really need to know what you look like to find you a good coding buddy!");
+    	return;
 	}
 
 	//make sure all questions are answered
