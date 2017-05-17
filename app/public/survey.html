@@ -20,10 +20,10 @@
 	<!--Google fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
-<!-- 	<link rel="stylesheet" href="style.css" type="text/css"> -->
+	<link rel="stylesheet" href="style.css" type="text/css">
 
 </head>
-		<style>
+		<!-- <style>
 	body {
 	margin: 0 auto;
 	background-image: url("https://cloud.githubusercontent.com/assets/21952950/26069975/e571f494-3970-11e7-851c-18ada7123b0a.jpg");
@@ -57,7 +57,7 @@ blockquote {
 #comic-sans {
 	font-family: "Comic Sans MS", cursive, sans-serif;
 }
-</style>
+</style> -->
 
 
 <body>
@@ -77,14 +77,12 @@ blockquote {
 				<div id="info" class="card-panel blue lighten-3">
 					<div class="row">
 						<div class="input-field white col s12">
-	          				<input id="name" type="text">
-	          				<label class="indigo-text" for="name">Name (required)</label>
+	          				<input id="name" type="text" placeholder="Name (required)">
 	        			</div>
 					</div>
 					<div class="row">
 						<div class="input-field white col s12">
-	          				<input id="photo" type="text">
-	          				<label class="indigo-text" for="photo">Link to Photo (required)</label>
+	          				<input id="photo" type="text" placeholder="Link to Photo (required)">
 	        			</div>
 					</div>
 				</div>
@@ -241,7 +239,7 @@ blockquote {
   					<div id="modalResult" class="modal">
   						<div class="modal-content">
   							<h4>Your CodeFriend Match is:</h4>
-  							<h6 id="matchName">match name will be here</h6>
+  							<h5 id="matchName">match name will be here</h6>
   							<img id="matchPhoto" src="" alt="">
   						</div>
   						<div class="modal-footer">
@@ -288,6 +286,8 @@ blockquote {
 				$("#matchPhoto").attr("src", data.photo);
 				$("#modalResult").modal("open");
 			});
+			//figure out how to clear form - this isn't it
+			// $('select').material_select("destroy");
 
 		})
 
