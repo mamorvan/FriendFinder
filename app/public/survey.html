@@ -6,7 +6,7 @@
 
 	<!--Favicon-->
 	<link rel="shortcut icon" href="https://cloud.githubusercontent.com/assets/21952950/26069949/cfb5b38e-3970-11e7-9642-e9ca348a3626.jpg">
-	<!--jQuery-->
+	<!--jQuery - has to be before Materialize for modals to work-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<!--Materialize-->
@@ -23,42 +23,6 @@
 	<link rel="stylesheet" href="style.css" type="text/css">
 
 </head>
-		<!-- <style>
-	body {
-	margin: 0 auto;
-	background-image: url("https://cloud.githubusercontent.com/assets/21952950/26069975/e571f494-3970-11e7-851c-18ada7123b0a.jpg");
-	font-family: "Muli", sans-serif;	
-}
-
-#headerCard {
-	margin-top: 50px;
-}
-
-.btn-large {
-	margin: 25px 0;
-}
-
-blockquote {
-	border-left: 3px solid #FFAB00;
-	font-size: 20px;
-}
-
-#survey label {
-	margin-top: -35px;
-}
-
-.btn {
-	margin-bottom: 50px;
-}
-.btn img {
-	margin: 3px;
-}
-
-#comic-sans {
-	font-family: "Comic Sans MS", cursive, sans-serif;
-}
-</style> -->
-
 
 <body>
 	<div class="container">
@@ -254,44 +218,7 @@ blockquote {
 		<a href="https://github.com/mamorvan/FriendFinder" class="waves-effect waves-light amber accent-4 black-text btn"><img src="https://cloud.githubusercontent.com/assets/21952950/26069920/ae8df86a-3970-11e7-829f-a2ef2c402711.png" alt="github-circle" ></a>
 	</div>
 
-	
-	<script type="text/javascript">
-		//initialize modal
-		$(document).ready(function(){
-			$(".modal").modal();
-		});
-		
-		$("#submit").on("click", function(event){
-			event.preventDefault();
-
-			var newFriend = {
-				name: $("#name").val().trim(),
-				photo: $("#photo").val().trim(),
-				scores: [
-					$("#question1").val(), 
-					$("#question2").val(), 
-					$("#question3").val(), 
-					$("#question4").val(), 
-					$("#question5").val(), 
-					$("#question6").val(), 
-					$("#question7").val(), 
-					$("#question8").val(), 
-					$("#question9").val(), 
-					$("#question10").val()
-				]
-			};
-
-			$.post("/api/friends", newFriend, function(data){
-				$("#matchName").html(data.name);
-				$("#matchPhoto").attr("src", data.photo);
-				$("#modalResult").modal("open");
-			});
-			//figure out how to clear form - this isn't it
-			// $('select').material_select("destroy");
-
-		})
-
-	</script>
+	<script type="text/javascript" src="app.js"></script>
 
 </body>
 </html>
