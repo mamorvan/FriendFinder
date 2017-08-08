@@ -1,6 +1,6 @@
-# CodeFriend Finder :busts_in_silhouette:   [Try it here](https://fierce-island-35221.herokuapp.com) :busts_in_silhouette:
+# CodeFriend Finder :busts_in_silhouette:   
 
-### CodeFriend Finder can find you the perfect coding buddy :computer:
+### CodeFriend Finder can find you the perfect coding buddy :computer:[Try it here](https://fierce-island-35221.herokuapp.com) :computer:
 
 #### Built with HTML, Materialize, CSS, Javascript, jQuery, Node.js and Express in order to practice with Materialize, Node.js and Express
 
